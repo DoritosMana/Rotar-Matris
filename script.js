@@ -28,8 +28,50 @@ const coloresHexadecimales = [
 
 /* Aqui inicia tu codigo  */
 
-cleaner();
-painter(coloresHexadecimales)
+cleaner(coloresHexadecimales);
+
+let matrizParaImprimir= coloresHexadecimales.map((x)=>[...x])
+let grados= prompt('¿Cuantos grados quieres rotar la imagen 90° o 180°')
+if (grados== '90') {
+  let direccion= prompt('Direccion de rotacion: ¿Izquierda o Derecha?')
+  if (direccion== 'derecha') {
+    for (let i = 0; i < coloresHexadecimales.length; i++) {
+      k=coloresHexadecimales.length
+      for (let j = 0; j < coloresHexadecimales.length; j++) {
+        matrizParaImprimir[i][j]= coloresHexadecimales[k-1][i]
+        k=k-1
+        
+      }
+      
+    }
+    
+  } else {
+    for (let i = 0; i < coloresHexadecimales.length; i++) {
+      k=coloresHexadecimales.length
+      for (let j = 0; j < coloresHexadecimales.length; j++) {
+        matrizParaImprimir[j][i]=coloresHexadecimales[i][k-1]
+        k=k-1
+        
+      }
+      
+    }
+  }
+  
+} else {
+  for (let i = 0; i < coloresHexadecimales.length; i++) {
+    k=coloresHexadecimales.length
+    for (let j = 0; j < coloresHexadecimales.length; j++) {
+      matrizParaImprimir[i][j]=coloresHexadecimales[k-1-i][k-1-j]
+      
+      
+
+
+    }
+    
+  }
+}
+
+painter(matrizParaImprimir)
 
 
 /* Aqui termina tu codigo  */
