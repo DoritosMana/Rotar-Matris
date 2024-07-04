@@ -34,7 +34,7 @@ let matrizParaImprimir= coloresHexadecimales.map((x)=>[...x])
 let grados= prompt('¿Cuantos grados quieres rotar la imagen 90° o 180°')
 if (grados== '90') {
   let direccion= prompt('Direccion de rotacion: ¿Izquierda o Derecha?')
-  if (direccion== 'derecha') {
+  if (direccion.toLowerCase== 'derecha') {
     for (let i = 0; i < coloresHexadecimales.length; i++) {
       k=coloresHexadecimales.length
       for (let j = 0; j < coloresHexadecimales.length; j++) {
@@ -71,6 +71,7 @@ if (grados== '90') {
   }
 }
 
+painter(coloresHexadecimales)
 painter(matrizParaImprimir)
 
 
